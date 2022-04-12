@@ -1,0 +1,433 @@
+:root {
+    --bg-color-1: #010658;
+    --bg-color-2: #060724;
+    --bg-color-3: #262a80;
+    --bg-color-4: #42d92b;
+
+    --color-1: #edeced;
+}
+
+/* Styles - General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-1);
+}
+
+/* Styles - Header */
+.header {
+    background-color: var(--bg-color-3);
+    position: sticky;
+    top: 0;
+}
+
+/* Styles - Nav */
+.nav {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.nav__hamburger {
+    cursor: pointer;
+    background-color: var(--bg-color-4);
+    border-radius: 50%;
+    padding: .5rem .65rem;
+}
+
+.nav__bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-1);
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav__hamburger--active .nav__bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav__hamburger--active .nav__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__hamburger--active .nav__bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav__branding {
+    color: var(--bg-color-4);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.nav__menu {
+    list-style: none;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background-color: var(--bg-color-3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all .6s ease-in-out;
+}
+
+.nav__menu--active {
+    left: 0;
+}
+
+.nav__link {
+    color: var(--color-1);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    display: block;
+}
+
+.nav__button {
+    background-color: var(--bg-color-4);
+    text-decoration: none;
+    color: var(--color-1);
+    font-size: 1.3rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Styles - Section presentation */
+.presentation {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: var(--bg-color-1);
+    min-height: 90vh;
+    justify-content: center;
+}
+
+.presentation__text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.presentation__title {
+    text-transform: uppercase;
+}
+
+.presentation__description {
+    text-transform: uppercase;
+}
+
+.presentation__buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.presentation__button {
+    background-color:  var(--bg-color-4);
+    color: var(--color-1);
+    text-decoration: none;
+    padding: .8rem 0.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.presentation__containerImage {
+    width: 100%;
+}
+
+.presentation__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Styles - Section about */
+.about {
+    background-color: var(--bg-color-2);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about__title {
+    text-transform: uppercase;
+}
+
+/* Styles - Section services */
+.services {
+    padding: 4rem 2rem;
+    background-color: var(--bg-color-1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.services__cards {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "servicesCardCreation"
+                         "servicesCardAdvice"
+                         "servicesCardInstallation";
+    gap: 2rem;
+}
+
+.services__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services__card--creation {
+    grid-area: servicesCardCreation;
+    background-image: url(../images/bg_img_card_creation.jpg);
+}
+
+.services__card--advice {
+    grid-area: servicesCardAdvice;
+    background-image: url(../images/bg_img_card_advice.jpg);
+}
+
+.services__card--installation {
+    grid-area: servicesCardInstallation;
+    background-image: url(../images/bg_img_card_installation.jpg);
+}
+
+.services__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Styles - Footer */
+.footer {
+    display: grid;
+    grid-template-areas: "footerBranding"
+                         "footerText";
+                         /* "footerInformation"
+                         "footerSocialMedia"; */
+    background-color: var(--bg-color-2);
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.footer__branding {
+    grid-area: footerBranding;
+    color: var(--bg-color-4);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: right;
+}
+
+.footer__text {
+    grid-area: footerText;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+}
+
+.footer__image {
+    width: 100%;
+}
+
+/* .footer__information {
+    grid-area: footerInformation;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.footer__socialMedia {
+    grid-area: footerSocialMedia;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__icon {
+    color: var(--bg-color-4);
+    background-color: var(--color-1);
+    border-radius: .2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer__icon--ig {
+    color: var(--color-1);
+    background-color: transparent;
+    font-size: 2rem;
+} */
+
+@media (min-width: 760px) {
+
+    /* Styles - Nav */
+    .nav {
+        padding: 0 4rem;
+    } 
+
+    .nav__menu {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background-color: var(--bg-color-2);
+    }
+
+    .nav__hamburger {
+        display: none;
+    }
+
+    .nav__link {
+        max-height: 42px;
+        padding: .5rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    .nav__link:hover {
+        border-bottom: 3px solid var(--color-1);
+    }
+
+    /* Styles - Section presentation */
+    .presentation {
+        padding: 4rem;
+    }
+
+    .presentation__title {
+        font-size: 5rem;
+    }
+
+    .presentation__description {
+        font-size: 1.5rem;
+    }
+
+    /* Styles - Section about */
+    .about__description {
+        font-size: 2rem;
+    }
+
+    /* Styles - Section services */
+    .services__cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "servicesCardInstallation servicesCardAdvice"
+                             "servicesCardCreation servicesCardCreation";
+    }
+
+    /* Styles - Footer */
+    .footer {
+        grid-template-columns: 1fr;
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-areas: "footerBranding"
+                             "footerText";
+        /* grid-template-areas: "footerBranding footerBranding"
+                             "footerText footerInformation"
+                             "footerText footerSocialMedia"; */
+        color: var(--color5);
+        gap: 2rem;
+    }
+
+    .footer__text {
+        align-items: center;
+    }
+
+    .footer__title {
+        font-size: 4rem;
+    }
+
+    .footer__image {
+        width: 50%;
+    }
+
+    /* .footer__information {
+        gap: 3rem;
+    }
+
+    .footer__contact {
+        gap: 1.5rem;
+    } */
+}
+
+@media (min-width: 1200px) {
+
+    /* Styles - Section presentation */
+    .presentation {
+        flex-direction: row;
+    }
+
+    .presentation__text {
+        justify-content: center;
+        flex: 1;
+    }
+
+    .presentation__title {
+        text-align: left;
+    }
+
+    .presentation__description {
+        text-align: left;
+    }
+
+    .presentation__containerImage {
+        flex: 2;
+    }
+
+    .presentation__buttons {
+        justify-content: flex-start;
+    }
+
+    /* Styles - Section services */
+    .services__cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "servicesCardCreation servicesCardAdvice servicesCardInstallation";
+    }
+}
